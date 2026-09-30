@@ -58,6 +58,7 @@ export function configurarFormulario() {
             mensagemErro = document.createElement("span");
             mensagemErro.classList.add("mensagem-erro");
             mensagemErro.dataset.campo = campo.id;
+            mensagemErro.setAttribute("role", "alert");
             campo.insertAdjacentElement("afterend", mensagemErro);
         }
 
@@ -166,6 +167,8 @@ export function configurarFormulario() {
 
         const erroParticipacao =
             document.getElementById("erro-participacao");
+
+        erroParticipacao.setAttribute("role", "alert");
 
         if (!participacao) {
             erroParticipacao.textContent =

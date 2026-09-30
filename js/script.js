@@ -3,11 +3,20 @@ import { configurarFormulario } from "./formulario.js";
 
 /* Menu hambúrguer */
 const botaoMenu = document.querySelector(".menu-toggle");
-const menu = document.querySelector("nav");
+const menu = document.querySelector("#menu-principal");
 
 if (botaoMenu && menu) {
     botaoMenu.addEventListener("click", function () {
         menu.classList.toggle("ativo");
+
+        const menuAberto = menu.classList.contains("ativo");
+
+        botaoMenu.setAttribute("aria-expanded", menuAberto);
+
+        botaoMenu.setAttribute(
+            "aria-label",
+            menuAberto ? "Fechar menu" : "Abrir menu"
+        );
     });
 }
 
@@ -192,7 +201,7 @@ function carregarPagina() {
                     <button type="submit">Cadastrar</button>
                 </form>
 
-                <p id="historico-cadastros"></p>
+                <p id="historico-cadastros" aria-live="polite"></p>
             </section>
         `;
 

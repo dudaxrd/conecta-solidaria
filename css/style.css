@@ -44,6 +44,10 @@ nav {
     gap: var(--espacamento-medio);
     flex-wrap: wrap;
 }
+nav a:focus {
+    outline: 3px solid var(--cor-secundaria);
+    outline-offset: 3px;
+}
 /* Cabeçalho com Flexbox */
 header {
     display: flex;
@@ -88,7 +92,8 @@ footer {
     padding: var(--espacamento-pequeno);
 }
 
-.dropdown:hover .submenu {
+.dropdown:hover .submenu,
+.dropdown:focus-within .submenu {
     display: block;
 }
 /* Estados interativos dos botões */
