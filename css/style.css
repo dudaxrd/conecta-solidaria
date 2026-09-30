@@ -113,6 +113,7 @@ button:hover {
 
 button:focus {
     outline: 3px solid var(--cor-secundaria);
+    outline-offset: 3px;
 }
 
 button:active {
