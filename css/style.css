@@ -151,7 +151,7 @@ input:invalid:not(:placeholder-shown) {
 /* Badge */
 .badge {
     display: inline-block;
-    background-color: var(--cor-primaria-clara);
+    background-color: var(--cor-primaria-escura);
     color: var(--cor-branco);
     font-size: var(--fonte-pequena);
     padding: 0.25rem 0.5rem;
@@ -264,4 +264,16 @@ input:invalid:not(:placeholder-shown) {
     font-size: var(--fonte-pequena);
     display: block;
     margin-top: 0.25rem;
+}
+/* Modo de alto contraste */
+.alto-contraste {
+    --cor-primaria: #000000;
+    --cor-primaria-clara: #000000;
+    --cor-primaria-escura: #000000;
+    --cor-secundaria: #FFFF00;
+    --cor-secundaria-clara: #FFFF00;
+    --cor-branco: #FFFFFF;
+    --cor-cinza-claro: #FFFFFF;
+    --cor-cinza: #000000;
+    --cor-texto: #000000;
 }

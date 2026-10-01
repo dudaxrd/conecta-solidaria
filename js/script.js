@@ -1,5 +1,6 @@
 import { gerarCardsProjetos } from "./projetos.js";
 import { configurarFormulario } from "./formulario.js";
+import imagemVoluntarios from "../imagens/voluntarios-otimizada.png";
 
 /* Menu hambúrguer */
 const botaoMenu = document.querySelector(".menu-toggle");
@@ -36,7 +37,7 @@ function carregarPagina() {
             <section>
                 <h2>Quem somos</h2>
 
-                <img src="../imagens/voluntarios.png"
+                <img src="${imagemVoluntarios}"
                     alt="Voluntários participando de uma ação solidária"
                     width="600">
 
@@ -212,3 +213,23 @@ function carregarPagina() {
 window.addEventListener("hashchange", carregarPagina);
 
 carregarPagina();
+
+// Modo de alto contraste
+const botaoContraste = document.getElementById("btn-contraste");
+
+if (botaoContraste) {
+    botaoContraste.addEventListener("click", function () {
+        document.body.classList.toggle("alto-contraste");
+
+        const contrasteAtivo =
+            document.body.classList.contains("alto-contraste");
+
+        botaoContraste.textContent =
+            contrasteAtivo ? "Contraste normal" : "Alto contraste";
+
+        botaoContraste.setAttribute(
+            "aria-pressed",
+            contrasteAtivo
+        );
+    });
+}
